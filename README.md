@@ -7,3 +7,5 @@
     ```
     docker-compose up --scale evpn=5
     ```
+
+3. New network macvlan network created named `evpn-net1`.

@@ -1,0 +1,10 @@
+version: "2.4"
+services:
+  evpn:
+    image: alpine:3.15
+    command: ping -c 3 172.18.1.2
+    networks:
+      - evpn-3
+networks:
+  evpn-3:
+    external: true

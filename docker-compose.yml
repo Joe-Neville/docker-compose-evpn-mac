@@ -4,7 +4,14 @@ services:
     image: alpine:3.15
     command: ping -c 3 172.18.1.2
     networks:
-      - evpn-3
+      - evpn-net1
 networks:
-  evpn-3:
-    external: true
+  evpn-net1:
+    driver: macvlan
+    driver_opts:
+      parent: eno1
+    name: evpn-net1
+    ipam:
+      config:
+        - subnet: 172.18.1.0/24
+          ip_range: 172.18.1.16/28 
